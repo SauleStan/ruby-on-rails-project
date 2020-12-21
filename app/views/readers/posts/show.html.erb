@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-lg-10 offset-lg-1 mb-5">
+        <div class="card post-card">
+            <% if @post.header_image.present? %>
+                <div class="header-image" style="background-image: url(<%= url_for(@post.header_image) %>);"></div>
+            <% end %>
+            <div class="card-body">
+                <div class="p-5 d-flex flex-column">
+                    <h1 class="card-title"><%= @post.title %></h1>
+                    <% @post.elements.each do |element| %>
+                        <% if element.image? %>
+                            <%= image_tag(element.image) %>
+                        <% else %>
+                            <%= element.content %>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
