@@ -7,7 +7,7 @@
     <ul class="navbar-nav ml-auto">
     <% if author_signed_in? %>
         <li class="nav-item active">
-            <a class="nav-link" href="/posts/">Posts<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/posts/">My posts<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
             <%= link_to "Sign out", destroy_author_session_path, method: :delete, class: "nav-link" %>
