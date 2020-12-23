@@ -7,11 +7,10 @@
             <%= render "form", post: @post %>
             </div>
             <div class="card-footer">
-                <% if @post.published? %>
-                    <a href="#" class="btn btn-secondary btn-block">Unpublish</a>
-                <% else %>
-                    <a href="#" class="btn btn-dark btn-block">Publish</a>
-                <% end %>
+                <%= button_to "Delete Post", @post, 
+                                            method: :delete, class: "btn btn-danger btn-block", 
+                                            data: { confirm: "Are you sure?"}
+                                            %>
             </div>
         </div>
     </div>
